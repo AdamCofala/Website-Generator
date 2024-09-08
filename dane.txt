@@ -1,0 +1,20 @@
+black
+https://i0.wp.com/sctcoc.org/wp-content/uploads/2024/02/image-3.png
+ROZ_TAK; FIX_NIE
+Lorem Ipsum
+100
+white
+4
+text 1, czy to dziala prosze panstwa; text 2: chyba tak najwyraźniej; text 3: bim bam bam; text 4
+23; 23; 23; 23
+white;white;white;white
+#5c6da4;#5c6da4;#5c6da4;#5c6da4
+https://i.pinimg.com/originals/bb/0d/ca/bb0dcad7a5e7e92c043718b1c90182cb.jpg; https://i.pinimg.com/originals/bb/0d/ca/bb0dcad7a5e7e92c043718b1c90182cb.jpg; https://i.pinimg.com/originals/bb/0d/ca/bb0dcad7a5e7e92c043718b1c90182cb.jpg; https://i.pinimg.com/originals/bb/0d/ca/bb0dcad7a5e7e92c043718b1c90182cb.jpg;
+ROZ_TAK ; ROZ_TAK ; ROZ_TAK ; ROZ_TAK 
+5
+black
+https://i.pinimg.com/originals/bb/0d/ca/bb0dcad7a5e7e92c043718b1c90182cb.jpg
+ROZ_TAK; FIX_TAK
+white
+25
+'Pokryte rosą małych przyjemności, serce powstaje i ożywa' – Kahlil Gibran
