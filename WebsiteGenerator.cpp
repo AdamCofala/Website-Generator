@@ -83,7 +83,8 @@ void generateCSS(ofstream &cssFile, const vector<string> &data) {
         cssFile << "    padding: 20px;\n"; // Dodanie paddingu dla lepszego wyglądu
         cssFile << "    flex: 1;\n"; // Każda kolumna zajmuje równą przestrzeń
         cssFile << "    margin: 10px;\n"; // Odstęp między kolumnami
-       if (columnBgImages[i] != "NIE") {
+        if( i<columnBgImages.size()){
+        if(columnBgImages[i] != "NIE") {
             cssFile << "    background-image: url('" << columnBgImages[i] << "');\n";
             if (!columnBgOptions[i].empty()) {
                 if (columnBgOptions[i].find("RY_TAK")!=string::npos)
@@ -95,6 +96,7 @@ void generateCSS(ofstream &cssFile, const vector<string> &data) {
                 if (columnBgOptions[i].find("FIX_TAK")!=string::npos)
                     cssFile << "    background-attachment: fixed;\n";
             }
+        }
         }
         cssFile << "    border-radius: " << borderRadius << "px;\n";
         cssFile << "}\n\n";
