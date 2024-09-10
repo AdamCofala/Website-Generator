@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <sstream>
 #include <vector>
 #include <string>
 
@@ -15,7 +14,7 @@ vector<string> split(const string &s, char delimiter){
             tmp=s.substr(j,i-j);
             results.push_back(tmp);
             j=i+1;
-        }
+        } 
         i++;
     }
     return results;
@@ -30,16 +29,16 @@ void generateCSS(ofstream &cssFile, const vector<string> &data) {
         cssFile << "    background-image: url('" << data[1] << "');\n";
     }
 
-    vector<string> backgroundOptions = split(data[2], ';');
+    string backgroundOptions = data[2];
     if (!backgroundOptions.empty()) {
-        if (backgroundOptions[0] == "RY_TAK")
-            cssFile << "    background-repeat: repeat-y;\n";
-        else if (backgroundOptions[0] == "RX_TAK")
-            cssFile << "    background-repeat: repeat-x;\n";
-        else if (backgroundOptions[0] == "ROZ_TAK")
-            cssFile << "    background-size: cover;\n";
-        else if (backgroundOptions[0] == "FIX_TAK")
-            cssFile << "    background-attachment: fixed;\n";
+        if (backgroundOptions.find("RY_TAK")!=string::npos)
+                    cssFile << "    background-repeat: repeat-y;\n";
+        if (backgroundOptions.find("RX_TAK")!=string::npos)
+                    cssFile << "    background-repeat: repeat-x;\n";
+        if (backgroundOptions.find("ROZ_TAK")!=string::npos)
+                    cssFile << "    background-size: cover;\n";
+        if (backgroundOptions.find("FIX_TAK")!=string::npos)
+                    cssFile << "    background-attachment: fixed;\n";
     }
 
     cssFile << "}\n\n";
@@ -87,8 +86,8 @@ void generateCSS(ofstream &cssFile, const vector<string> &data) {
                     cssFile << "    background-attachment: fixed;\n";
             }
         }
-         cssFile << "    border-radius: " << borderRadius[i] << "px;\n";
         }
+        if(i<borderRadius.size()) cssFile << "    border-radius: " << borderRadius[i] << "px;\n";
         cssFile << "}\n\n";
     }
 
@@ -275,7 +274,7 @@ int main() {
         }
         inputFile.close();
     } else {
-        cerr << "Nie można otworzyć pliku dane.txt" << endl;
+        cout << "Nie można otworzyć pliku dane.txt" << endl;
         return 1;
     }
 
@@ -294,7 +293,7 @@ int main() {
         htmlFile.close();
         cssFile.close();
     } else {
-        cerr << "Nie mozna utworzyc plikow wyjsciowych" << endl;
+        cout << "Nie mozna utworzyc plikow wyjsciowych" << endl;
         return 1;
     }
 
