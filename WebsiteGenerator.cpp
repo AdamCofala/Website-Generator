@@ -5,16 +5,6 @@
 #include <string>
 
 using namespace std;
-/*
-vector<string> split(const string &s, char delimiter) {
-    vector<string> tokens;
-    string token;
-    istringstream tokenStream(s);
-    while (getline(tokenStream, token, delimiter)) {
-        tokens.push_back(token);
-    }
-    return tokens;
-}*/
 
 vector<string> split(const string &s, char delimiter){
     vector<string> results;
@@ -73,7 +63,7 @@ void generateCSS(ofstream &cssFile, const vector<string> &data) {
     vector<string> columnBgColors = split(data[10], ';');
     vector<string> columnBgImages = split(data[11], ';');
     vector<string> columnBgOptions = split(data[12], ';');
-    string borderRadius = data[13];
+    vector<string> borderRadius = split(data[13], ';');
 
     for (int i = 0; i < stoi(data[6]); ++i) {
         cssFile << ".column-" << i + 1 << " {\n";
@@ -97,8 +87,8 @@ void generateCSS(ofstream &cssFile, const vector<string> &data) {
                     cssFile << "    background-attachment: fixed;\n";
             }
         }
+         cssFile << "    border-radius: " << borderRadius[i] << "px;\n";
         }
-        cssFile << "    border-radius: " << borderRadius << "px;\n";
         cssFile << "}\n\n";
     }
 
@@ -304,10 +294,10 @@ int main() {
         htmlFile.close();
         cssFile.close();
     } else {
-        cerr << "Nie można utworzyć plików wyjściowych" << endl;
+        cerr << "Nie mozna utworzyc plikow wyjsciowych" << endl;
         return 1;
     }
 
-    cout << "Pliki index.html i style.css zostały wygenerowane." << endl;
+    cout << "Pliki index.html i style.css zostaly wygenerowane." << endl;
     return 0;
 }
