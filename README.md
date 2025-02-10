@@ -1,44 +1,68 @@
 # Website-Generator
-Basic program for school
 
-FUNKCJONALNOŚĆ PROGRAMU
+## Overview
+Website-Generator is a basic program designed for school projects that generates a simple website. The program outputs two files:
+1. An HTML file for the website's structure.
+2. A CSS file for the website's styling.
 
-Program służy do generowania strony internetowej. Wynikiem działania programu sa dwa pliki:
-pierwszy z rozszerzeniem html i drugi z rozszerzeniem css.
-W przypadku wstawiania grafiki użytkownik wpisuje ścieżkę do pliku graficznego. Plik może
-znajdować się w zasobach lokalnych lub w internecie.
+Users can define various properties of the website, including background images, text formatting, column structures, and footer settings.
 
-PLIK WEJŚCIOWY
+## Features
+- Generates HTML and CSS files automatically.
+- Allows users to set background colors and images.
+- Supports text formatting, including font size and color.
+- Enables multi-column layouts (1 to 4 columns).
+- Provides customization options for footers and column backgrounds.
+- Allows image-based backgrounds with adjustable display settings.
+- Supports rounded corners for a polished design.
 
-Nazwa pliku: dane.txt
+## Input File Specification
+The program reads from an input file named `dane.txt`, where each line defines a specific setting. The expected format is as follows:
 
-Poszczególne linijki pliku zawierają:
+### General Page Settings
+1. Background color of the page.
+2. Path to the background image (local file or URL).
+3. Image display settings (separated by semicolons):
+   - `NIE` – No background image.
+   - `RY_TAK` or `RY_NIE` – Repeat vertically.
+   - `RX_TAK` or `RX_NIE` – Repeat horizontally.
+   - `ROZ_TAK` or `ROZ_NIE` – Stretch image.
+   - `FIX_TAK` or `FIX_NIE` – Fixed background.
+4. Page title.
+5. Title font size.
+6. Title font color.
+7. Number of content columns (1 to 4).
 
-1. Kolor tła strony.
-2. Ścieżka do pliku graficznego będącego tłem strony.
-3. Słowa oddzielone średnikami:
-a. NIE – brak grafiki jako tło 
-b. RY_TAK lub RY_NIE – powtarzanie w pionie 
-c. RX_TAK lub RX_NIE – powtarzanie w poziomie 
-d. ROZ_TAK lub ROZ_NIE – rozciąganie grafiki 
-e. FIX_TAK lub FIX_NIE – zablokowanie przewijania grafiki 
+### Column Settings
+8. Content of each column.
+9. Font size for each column.
+10. Font color for each column.
+11. Background color for each column.
+12. Option to use an image as a background for each column.
+13. If an image is used, its display settings:
+    - Repeat vertically/horizontally.
+    - Stretch to fit.
+    - Fixed background.
+14. Border-radius for rounded corners in each column.
 
-4. Tytuł strony wyświetlany w górnej części strony.
-5. Rozmiar czcionki tytułu strony
-6. Kolor czcionki tytułu strony.
-7. Liczbę kolumn zawartych w głównej części strony (od 1 do 4).
-8. Treść poszczególnych kolumn.
-9. Rozmiar czcionki w poszczególnych kolumnach.
-10. Kolor czcionki w poszczególnych kolumnach.
-11. Kolor tła poszczególnych kolumn.
-12. Możliwość ustawienia grafiki jako tła poszczególnych kolumn.
-13. W przypadku ustawienia grafiki możliwość ustawienia sposobu wyświetlania grafiki (czy
-powtarzać w pionie / poziomie, czy rozciągnąć, czy zablokować przewijanie)
-14. Promień zaokrąglenia narożników poszczególnych kolumn.
-15. Kolor tła stopki strony.
-16. Możliwość ustawienia grafiki jako tła stopki.
-17. W przypadku ustawienia grafiki możliwość ustawienia sposobu wyświetlania grafiki (czy
-powtarzać w pionie / poziomie, czy rozciągnąć, czy zablokować przewijanie)
-18. Kolor czcionki w stopce strony.
-19. Rozmiar czcionki w stopce strony.
-20. Treść stopki strony.
+### Footer Settings
+15. Background color of the footer.
+16. Option to use an image as the footer background.
+17. If an image is used, its display settings:
+    - Repeat vertically/horizontally.
+    - Stretch to fit.
+    - Fixed background.
+18. Footer font color.
+19. Footer font size.
+20. Footer content.
+
+## Usage
+1. Create an input file `dane.txt` with the required settings.
+2. Run the program.
+3. The program generates `index.html` and `style.css` based on the input file.
+4. Open `index.html` in a browser to view the generated website.
+
+## Notes
+- Ensure correct formatting in `dane.txt` for accurate rendering.
+- Use local paths or valid URLs for images.
+- The program supports only basic styling and layout adjustments.
